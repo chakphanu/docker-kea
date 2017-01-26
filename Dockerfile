@@ -12,7 +12,8 @@ RUN apt-get update \
       kea-admin kea-dhcp-ddns-server kea-dhcp4-server kea-dhcp6-server \
       iptables \
   && cp -r /etc/kea /etc/kea.orig \
-  && apt-get clean
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
 
 ADD src/starter.sh /
 
